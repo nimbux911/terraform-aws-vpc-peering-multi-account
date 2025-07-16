@@ -42,7 +42,7 @@ data "aws_region" "accepter" {
 # Lookup accepter's VPC so that we can reference the CIDR
 data "aws_vpc" "accepter" {
   count    = local.accepter_count
-  #provider = aws.accepter
+  provider = aws.accepter
   id       = var.accepter_vpc_id
   tags     = var.accepter_vpc_tags
 }
